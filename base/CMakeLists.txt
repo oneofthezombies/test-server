@@ -1,4 +1,4 @@
-project(Base)
+project(base)
 message(${PROJECT_NAME})
 
 add_library(${PROJECT_NAME} SHARED

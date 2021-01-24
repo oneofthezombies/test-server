@@ -1,49 +1,45 @@
 //
-//  error.cpp
-//  test-server
-//
-//  Created by hunhoekim on 2021/01/23.
+// Created by hunhoekim on 2021/01/24.
 //
 
-#include "Error.h"
+#include "base/Error.h"
 
-Error::Error(int32_t number,
-             std::string&& message,
-             std::string&& file,
-             int32_t line)
-    : number(number),
-    message(std::move(message)),
-    file(std::move(file)),
-    line(line) {
+namespace ootz {
+
+Error::Error(int32_t number, std::string&& message, std::string&& file, int32_t line)
+    : number(number), message(std::move(message)), file(std::move(file)), line(line) {
 }
 
 Error::Error(Error&& other) noexcept
-    : number(0),
-    line(0) {
-    moveFrom_(std::move(other));
+    : number(0), line(0) {
+    moveFrom(std::move(other));
 }
 
 Error& Error::operator=(Error&& other) noexcept {
-    moveFrom_(std::move(other));
+    moveFrom(std::move(other));
     return *this;
 }
 
-void Error::clear_() {
+void Error::clear() {
     number = 0;
     line = 0;
     message.clear();
     file.clear();
 }
 
-void Error::moveFrom_(Error&& other) noexcept {
+void Error::moveFrom(Error&& other) noexcept {
     std::swap(number, other.number);
     std::swap(message, other.message);
     std::swap(file, other.file);
     std::swap(line, other.line);
-    other.clear_();
+    other.clear();
 }
 
-std::ostream& operator<<(std::ostream& ostream, const Error& error) {
+} // namespace ootz
+
+namespace std {
+
+ostream& operator<<(ostream& ostream, const ootz::Error& error) {
     ostream << "Error"
             << " "
             << "number: [" << error.number << "]"
@@ -55,3 +51,5 @@ std::ostream& operator<<(std::ostream& ostream, const Error& error) {
             << "line: [" << error.line << "]";
     return ostream;
 }
+
+} // namespace std
