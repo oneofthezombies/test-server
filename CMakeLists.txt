@@ -5,7 +5,7 @@ message(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_subdirectory(Base)
+add_subdirectory(base)
 add_subdirectory(test)
 add_subdirectory(tcp-server)
 add_subdirectory(tcp-client)
