@@ -2,9 +2,6 @@
 // Created by hunhoekim on 2021/01/24.
 //
 
-//#include <sys/socket.h>
-//#include <netinet/in.h>
-//#include <unistd.h>
 #include <arpa/inet.h>
 
 #include "base/FileDescriptor.h"
@@ -24,15 +21,15 @@ int main(int argc, const char* argv[]) {
 
     FileDescriptor serverfd = socketResult.data();
 
-    struct sockaddr_in serverInfo{};
-    if (1 != ::inet_pton(AF_INET, ip.c_str(), &serverInfo.sin_addr)) {
+    struct sockaddr_in address{};
+    if (1 != ::inet_pton(AF_INET, ip.c_str(), &address.sin_addr)) {
         std::cout << GET_LAST_ERROR() << std::endl;
         return 1;
     }
 
-    serverInfo.sin_family = AF_INET;
-    serverInfo.sin_port = htons(port);
-    if (-1 == ::connect(serverfd.get(), reinterpret_cast<struct sockaddr*>(&serverInfo), sizeof(serverInfo))) {
+    address.sin_family = AF_INET;
+    address.sin_port = htons(port);
+    if (-1 == ::connect(serverfd.get(), reinterpret_cast<struct sockaddr*>(&address), sizeof(address))) {
         std::cout << GET_LAST_ERROR() << std::endl;
         return 1;
     }
