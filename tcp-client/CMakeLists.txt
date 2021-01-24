@@ -1,7 +1,7 @@
 project(tcp-client)
 message(${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME} tcp-client.cpp)
+add_executable(${PROJECT_NAME} TcpClient.cpp)
 
 add_dependencies(${PROJECT_NAME} base)
 

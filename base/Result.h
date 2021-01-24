@@ -17,7 +17,11 @@ struct Result {
 
     bool valid() const;
 
+    DataType&& data();
+
     const DataType& data() const;
+
+    Error&& error();
 
     const Error& error() const;
 
@@ -52,6 +56,16 @@ const DataType& Result<DataType>::data() const {
 template<typename DataType>
 const Error& Result<DataType>::error() const {
     return *std::get_if<Error>(&data_);
+}
+
+template<typename DataType>
+DataType&& Result<DataType>::data() {
+    return std::move(*std::get_if<DataType>(&data_));
+}
+
+template<typename DataType>
+Error&& Result<DataType>::error() {
+    return std::move(*std::get_if<Error>(&data_));
 }
 
 } // namespace ootz
