@@ -31,8 +31,8 @@ private:
     void moveFrom(Error&& other) noexcept;
 };
 
-#define GET_LAST_ERROR() Error(errno, ::strerror(errno), __FILE__, __LINE__)
 #define MAKE_ERROR(number, message) Error(number, message, __FILE__, __LINE__)
+#define GET_LAST_ERROR() MAKE_ERROR(errno, ::strerror(errno))
 
 }
 
