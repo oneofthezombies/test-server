@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="tcp-server" type="CMakeRunConfiguration" factoryName="Application" singleton="false" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/tcp-server" PASS_PARENT_ENVS_2="true" PROJECT_NAME="test-server" TARGET_NAME="tcp-server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="test-server" RUN_TARGET_NAME="tcp-server">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
