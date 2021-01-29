@@ -1,0 +1,6 @@
+add_subdirectory(base)
+add_subdirectory(test)
+add_subdirectory(tcp-server)
+add_subdirectory(tcp-client)
+add_subdirectory(http-server)
+add_subdirectory(http-client)
