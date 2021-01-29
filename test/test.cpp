@@ -6,12 +6,11 @@
 //
 
 #include <iostream>
-using namespace std;
 
-#include "Base/Error.h"
+#include "base/Error.h"
 
 int main(int argc, const char * argv[]) {
-    cout << "start test\n";
+    std::cout << "start test" << std::endl;
     
 //    cout << sizeof(int) << '\n';
 //    cout << sizeof(long) << '\n';
@@ -21,6 +20,6 @@ int main(int argc, const char * argv[]) {
 //    cout << sizeof(errno) << '\n';
 
     std::string a((std::stringstream("fdsa") << 1).str());
-    cout << "stop test" << endl;
+    std::cout << "stop test" << std::endl;
     return 0;
 }
