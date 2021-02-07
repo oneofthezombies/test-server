@@ -9,10 +9,10 @@ add_library(${PROJECT_NAME}
 
 target_precompile_headers(${PROJECT_NAME}
   PRIVATE
-    ${CMAKE_SOURCE_DIR}/source/Precompile.h
+    ${CMAKE_SOURCE_DIR}/base/Precompile.h
 )
 
 target_include_directories(${PROJECT_NAME}
   PRIVATE
-    ${CMAKE_SOURCE_DIR}/source/
+    ${CMAKE_SOURCE_DIR}/
 )

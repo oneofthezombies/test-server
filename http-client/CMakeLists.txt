@@ -1,8 +1,8 @@
-project(test)
+project(http-client)
 message(${PROJECT_NAME})
 
 add_executable(${PROJECT_NAME}
-  test.cpp
+  HttpClient.cpp
 )
 
 add_dependencies(${PROJECT_NAME}
@@ -11,15 +11,15 @@ add_dependencies(${PROJECT_NAME}
 
 target_precompile_headers(${PROJECT_NAME}
   PRIVATE
-    ${CMAKE_SOURCE_DIR}/source/Precompile.h
+    ${CMAKE_SOURCE_DIR}/base/Precompile.h
 )
 
 target_include_directories(${PROJECT_NAME}
   PRIVATE
-    ${CMAKE_SOURCE_DIR}/source/
+    ${CMAKE_SOURCE_DIR}/
 )
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
-    ${CMAKE_BINARY_DIR}/source/base/libbase.dylib
+    ${CMAKE_BINARY_DIR}/base/libbase.dylib
 )

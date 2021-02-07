@@ -1,11 +1,11 @@
 //
-//  HttpServer.cpp
-//  http-server
+//  HttpClient.cpp
+//  http-client
 //
 //  Created by hunhoekim on 2021/01/23.
 //
 
-#include "Precompile.h"
+#include "base/Precompile.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
