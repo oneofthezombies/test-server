@@ -2,6 +2,8 @@
 // Created by hunhoekim on 2021/01/24.
 //
 
+#include "Precompile.h"
+
 #include "base/Error.h"
 
 namespace ootz {
